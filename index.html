@@ -49,6 +49,8 @@
         var includedLines = lines.filter(
           (line) => !line.includes("[") && !line.includes("]")
         ); // Join the remaining lines back into a string
+
+        includedLines = includedLines.filter((line) => !line.match(/^\s+/));
         var newIncludedLines = includedLines.filter((str) => str.trim() !== "");
         var parsedResult = newIncludedLines.join("<br>");
         var newResult = parsedResult.replace(regex, "");
