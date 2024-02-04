@@ -47,7 +47,7 @@
         inputText = inputText.replace(/\n/g, "<br>");
         var lines = inputText.split("<br>");
         var includedLines = lines.filter(
-          (line) => !line.includes("[") || !line.includes("]")
+          (line) => !line.includes("[") && !line.includes("]")
         ); // Join the remaining lines back into a string
         var newIncludedLines = includedLines.filter((str) => str.trim() !== "");
         var parsedResult = newIncludedLines.join("<br>");
